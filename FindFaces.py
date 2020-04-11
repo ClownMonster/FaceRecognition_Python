@@ -1,6 +1,7 @@
 '''
 locate the faces in the image
 count the number of faces in the image
+Get the exact facelocations
 
 '''
 
