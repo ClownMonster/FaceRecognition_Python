@@ -10,6 +10,8 @@ import face_recognition
 import os
 import glob # import to read the files from directory
 
+from EncodingsNames import append_data
+
 def facematch(unknown_img_location):
     unknown_img = face_recognition.load_image_file(unknown_img_location)
     unknown_img_encodings = face_recognition.face_encodings(unknown_img)[0]
@@ -21,7 +23,9 @@ def facematch(unknown_img_location):
 
         else:
             known_img = face_recognition.load_image_file(file)
+            NameFormated = (file.split('/')[2]).split('.')[0] # Get the Name from file Name
             known_img_encodings = face_recognition.face_encodings(known_img)[0]
+            append_data(known_img_encodings, NameFormated)
             match = face_recognition.compare_faces([known_img_encodings], unknown_img_encodings)
 
         if match == [True]:
@@ -36,4 +40,4 @@ def facematch(unknown_img_location):
 
 
 
-#facematch('./Unknown_faces/img4.jpg')
+facematch('./Unknown_faces/img4.jpg')
