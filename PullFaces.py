@@ -25,5 +25,5 @@ def pullfaces(imagelocation):
 
 
 
-pullfaces('./Unknown_faces/group/neymar-group.jpg')
+#pullfaces('./Unknown_faces/group/neymar-group.jpg')
 
